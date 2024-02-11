@@ -49,3 +49,9 @@ You need to self-host crosstab, I use a Raspberry Pi but your daily driver shoul
 
 Please note that everyone who can access your server will be able to see which website you share and also to change which website you want to open.  
 So make sure only trusted people can access the server!
+
+## Integration
+
+### iOS
+
+There is [this](https://www.icloud.com/shortcuts/f47341e1049247b9b18a52ec16d73e3c) siri shortcut to share a site to CrossTab directly from the sharesheet.
