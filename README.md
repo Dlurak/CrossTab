@@ -23,6 +23,19 @@ CrossTab has the following endpoints:
 
 You need to self-host crosstab, I use a Raspberry Pi but your daily driver should also be fine!
 
+### From Docker-hub
+
+1. Pull the image from docker hub
+   ```bash
+   docker pull dlurak/crosstab
+   ```
+2. Start it
+   ```bash
+   docker run -d -p 5000:5000 dlurak/crosstab
+   ```
+
+### From source
+
 1. Clone this repo
    ```bash
    git clone https://github.com/Dlurak/CrossTab.git
