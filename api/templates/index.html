@@ -14,9 +14,7 @@
     </a>
 
     <script>
-      const crossTabUrl =
-        new URL(window.location.href).searchParams.get("api") ||
-        "http://localhost:5000";
+      const crossTabUrl = new URL(window.location.href).origin;
 
       const inputEle = document.getElementById("url-input");
       const buttonEle = document.getElementById("url-submit");
