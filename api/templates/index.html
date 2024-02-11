@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crosstab</title>
+  </head>
+  <body>
+    <input type="url" id="url-input" />
+    <button type="submit" id="url-submit">Upload</button>
+
+    <a href="" id="url-link">
+      <pre id="url-display"></pre>
+    </a>
+
+    <script>
+      const crossTabUrl =
+        new URL(window.location.href).searchParams.get("api") ||
+        "http://localhost:5000";
+
+      const inputEle = document.getElementById("url-input");
+      const buttonEle = document.getElementById("url-submit");
+      const urlDisplayEle = document.getElementById("url-display");
+      const aEle = document.getElementById("url-link");
+
+      async function setPreview() {
+        await fetch(crossTabUrl)
+          .then((res) => res.text())
+          .then((res) => {
+            urlDisplayEle.innerText = res;
+            aEle.href = res;
+          });
+      }
+
+      async function upload() {
+        await fetch(crossTabUrl, {
+          method: "POST",
+          body: inputEle.value,
+        }).then(() => {
+          setPreview();
+        });
+      }
+
+      buttonEle.addEventListener("click", () => {
+        upload();
+      });
+      setPreview();
+    </script>
+  </body>
+</html>
