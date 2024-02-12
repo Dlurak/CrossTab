@@ -1,0 +1,9 @@
+{
+  "name": "Crosstab",
+  "short_name": "Crosstab",
+  "description": "Share your tabs between devices",
+  "start_url": "/ui",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}

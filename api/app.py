@@ -2,7 +2,7 @@ from flask import Flask, request, redirect, render_template
 from waitress import serve
 from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 CORS(app)
 
 share_url = ''

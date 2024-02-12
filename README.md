@@ -50,6 +50,13 @@ You need to self-host crosstab, I use a Raspberry Pi but your daily driver shoul
 Please note that everyone who can access your server will be able to see which website you share and also to change which website you want to open.  
 So make sure only trusted people can access the server!
 
+## Screenshots
+
+CrossTab has a very minimal and beautifull design.
+
+![Desktop](./assets/desktop.png)
+![Mobile](./assets/mobile.png)
+
 ## Integration
 
 ### iOS
