@@ -4,10 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crosstab</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        --bg-color: white;
+        --bg-upload: #1001d4;
+        --font-upload: white;
+        --font-link: #004dff;
+      }
+
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        min-height: 100svh;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background-color: var(--bg-color);
+      }
+
+      #search-wrapper {
+        width: min(40rem, 90%);
+        height: 3rem;
+
+        display: flex;
+
+        border-radius: 0.25rem;
+        overflow: hidden;
+
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+
+      #search-wrapper > input {
+        width: 100%;
+        padding-inline: 1rem;
+        font-size: max(14px, 1rem);
+
+        background-color: var(--bg-color);
+      }
+
+      #search-wrapper > button {
+        aspect-ratio: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--bg-upload);
+
+        cursor: pointer;
+      }
+
+      #search-wrapper > button,
+      #search-wrapper > input {
+        outline: none;
+        border: none;
+      }
+
+      #url-link:has(pre:empty) {
+        display: none;
+      }
+
+      a {
+        color: var(--font-link);
+      }
+    </style>
   </head>
   <body>
-    <input type="url" id="url-input" />
-    <button type="submit" id="url-submit">Upload</button>
+    <div id="search-wrapper">
+      <input type="url" id="url-input" autofocus placeholder="Enter a domain" />
+      <button type="submit" id="url-submit">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          style="fill: var(--font-upload); transform:; msfilter:"
+        >
+          <path
+            d="M18.944 11.112C18.507 7.67 15.56 5 12 5 9.244 5 6.85 6.611 5.757 9.15 3.609 9.792 2 11.82 2 14c0 2.757 2.243 5 5 5h11c2.206 0 4-1.794 4-4a4.01 4.01 0 0 0-3.056-3.888zM13 14v3h-2v-3H8l4-5 4 5h-3z"
+          ></path>
+        </svg>
+      </button>
+    </div>
 
     <a href="" id="url-link">
       <pre id="url-display"></pre>
@@ -37,6 +122,8 @@
         }).then(() => {
           setPreview();
         });
+
+        inputEle.value = "";
       }
 
       buttonEle.addEventListener("click", () => {
